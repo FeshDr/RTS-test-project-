@@ -4,12 +4,34 @@ using UnityEngine;
 
 public class building : MonoBehaviour
 {
+    public Renderer mainRenderer;
+
+    public Color defauitColor;
+
     public int weight;
     public int height;
     // Start is called before the first frame update
     void Start()
     {
+       
+    }
+
+    public void setBuildColor(bool flag)
+    {
+
         
+        if (flag)
+        {
+            mainRenderer.material.color = Color.green;
+        } else
+        {
+            mainRenderer.material.color = Color.red;
+        }
+    }
+
+    public void setNormalColor()
+    {
+        mainRenderer.material.color = defauitColor;
     }
 
     private void OnDrawGizmos()

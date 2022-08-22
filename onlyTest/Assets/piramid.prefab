@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e07f3e10a89b793418bdfd97ac54576f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainRenderer: {fileID: 5482438709005069700}
+  defauitColor: {r: 1, g: 1, b: 1, a: 0}
   weight: 3
   height: 3
 --- !u!1001 &6493505426081474281
@@ -112,6 +114,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e8ab916a62c9ca4fb7c0ec927b4d8af, type: 3}
+--- !u!23 &5482438709005069700 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7635826562936255635, guid: 0e8ab916a62c9ca4fb7c0ec927b4d8af, type: 3}
+  m_PrefabInstance: {fileID: 6493505426081474281}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6743904848302113026 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0e8ab916a62c9ca4fb7c0ec927b4d8af, type: 3}

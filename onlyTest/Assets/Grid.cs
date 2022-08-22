@@ -41,11 +41,17 @@ public class Grid
         return new Vector3(x, 0, y) * cellsize;
     }
 
+    public int getValue(int x, int y)
+    {
+        return gridArray[x, y];
+    }
+
     public void setValue(int x, int y, int value)
     {
         if (x > 0 && y > 0 && x < gridArray.GetLength(0) && y < gridArray.GetLength(1))
         {
             gridArray[x, y] = value;
+            debugTextArray[x, y].text = value.ToString();
         }
     }
 

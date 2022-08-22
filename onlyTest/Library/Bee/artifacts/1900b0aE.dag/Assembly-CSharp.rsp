@@ -362,6 +362,7 @@
 "Assets/REDButtonLogic.cs"
 "Assets/selected_dictionary.cs"
 "Assets/selection_component.cs"
+"Assets/SpawnCanvas.cs"
 "Assets/SpawnTest.cs"
 "Assets/TestGrid.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
