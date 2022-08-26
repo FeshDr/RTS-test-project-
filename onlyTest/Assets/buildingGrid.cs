@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class buildingGrid : MonoBehaviour
 {
-    private int weight = 20;
-    private int height = 20;
+    private int weight = 200;
+    private int height = 200;
     private Camera mainCamera;
     private Grid buildingMap;
 
@@ -15,7 +15,7 @@ public class buildingGrid : MonoBehaviour
     void Start()
     {
 
-        buildingMap = new Grid(weight,height,10);
+        buildingMap = new Grid(weight,height,1);
 
         grid = new building[weight, height];
 

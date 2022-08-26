@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+// карта работает сейчас только в плоскоти x,0,z. Y пока не анстраивал да и думаю это нам не нужно
+// строительство работате в том же формате
 public class Grid
 {
     private int width;
@@ -24,8 +25,24 @@ public class Grid
         {
             for(int y = 0; y < gridArray.GetLength(1); y++)
             {
-                gridArray[x, y] = 0;
-                debugTextArray[x, y] = AUtils.CreateWorldText(gridArray[x,y].ToString() , null ,GetWorlPosition(x,y) + new Vector3(cellsize, 0 , cellsize) * .5f, 20 ,Color.yellow, TextAnchor.MiddleCenter);
+
+                debugTextArray[x, y] = AUtils.CreateWorldText(gridArray[x, y].ToString(), null, GetWorlPosition(x, y) + new Vector3(cellsize, 0, cellsize) * .5f, 10, Color.yellow, TextAnchor.MiddleCenter);
+
+                RaycastHit upHit;
+                Debug.DrawLine(GetWorlPosition(x, y) + new Vector3(0.5f, 0, 0.5f), GetWorlPosition(x, y) + new Vector3(0.5f, 0, 0.5f) + Vector3.up * 3f, Color.red, 100f);
+                if (Physics.Raycast(new Vector3(x,-1,y) * cellsize + new Vector3(0.5f,0,0.5f),Vector3.up, out upHit, 10f))
+                {
+                    Debug.Log(upHit.point.x + ", " + upHit.point.z);
+                    gridArray[x, y] = -1;
+                    debugTextArray[x, y].color = Color.red;
+                    debugTextArray[x, y].text = gridArray[x, y].ToString();
+                } else
+                {   
+                    gridArray[x, y] = 0;
+                }
+
+
+                
                 Debug.DrawLine(GetWorlPosition(x,y),GetWorlPosition(x,y+1), Color.yellow, 100f);
                 Debug.DrawLine(GetWorlPosition(x,y), GetWorlPosition(x + 1, y), Color.yellow, 100f);
             }
